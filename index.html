@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>我的电影</title>
+    <link rel="stylesheet" href="resourceCss/mui.min.css">
+    <link rel="stylesheet" href="resourceCss/slick.css">
+    <link rel="stylesheet" href="resourceCss/base.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="muiA"><i class="iconfont">&#xe660;</i></a>
+    <h1 class="mui-title">我的电影</h1>
+</header>
+<!--轮播图-->
+<div class="indexFlashTel" id="indexFlashTel">
+    <div class="bd">
+        <ul>
+            <li><img src="images/1.jpg"/></li>
+            <li><img src="images/2.jpg"/></li>
+            <li><img src="images/3.jpg"/></li>
+            <li><img src="images/4.jpg"/></li>
+            <li><img src="images/5.jpg"/></li>
+        </ul>
+    </div>
+    <div class="btnDiv"></div>
+</div>
+<!--导航-->
+<div id="officeImg">
+    <div class="officeImg">
+        <div class="slick-slide">
+            <div class="name"><a href="static/weather.html">天气查询</a></div>
+        </div>
+        <div class="slick-slide">
+            <div class="name"><a href="static/hotshowingpage.html">正在热映</a></div>
+        </div>
+        <div class="slick-slide">
+            <div class="name"><a href="static/comingsoonpage.html">即将上映</a></div>
+        </div>
+        <div class="slick-slide">
+            <div class="name"><a href="static/top250page.html">Top250</a></div>
+        </div>
+        <div class="slick-slide">
+            <div class="name"><a href="static/foreignpage.html">北美票房榜</a></div>
+        </div>
+        <div class="slick-slide">
+            <div class="name"><a href="javascipt:;">口碑榜</a></div>
+        </div>
+    </div>
+</div>
+<!--正在热映-->
+<div class="hotshowing">
+    <div class="commonson">
+        <h4>正在热映</h4>
+        <a href="static/hotshowingpage.html" class="skip1">更多<i class="iconfont">&#xe65f;</i>...</a>
+    </div>
+    <div class="soonlist clearfloat">
+        <ul class="soonlists">
+
+        </ul>
+    </div>
+</div>
+<!--即将上映-->
+<div class="comingsoon">
+    <div class="commonson">
+        <h4>即将上映</h4>
+        <a href="static/comingsoonpage.html" class="skip2">更多<i class="iconfont">&#xe65f;</i>...</a>
+    </div>
+    <div class="cominglist clearfloat">
+        <ul class="cominglists">
+
+        </ul>
+    </div>
+</div>
+<!--top250-->
+<div class="top250">
+    <div class="commonson">
+        <h4>Top250</h4>
+        <a href="static/top250page.html" class="skip3">更多<i class="iconfont">&#xe65f;</i>...</a>
+    </div>
+    <div class="toplist clearfloat">
+        <ul class="toplists">
+
+        </ul>
+    </div>
+</div>
+<!--北美票房榜-->
+<div class="foreign">
+    <div class="commonson">
+        <h4>北美票房榜</h4>
+        <a href="static/foreignpage.html" class="skip4">更多<i class="iconfont">&#xe65f;</i>...</a>
+    </div>
+    <div class="foreignlist clearfloat">
+        <ul class="foreignlists">
+
+        </ul>
+    </div>
+</div>
+<!--正在热映-->
+<script type="text/template" id="intheaters">
+        {{each subjects as v i}}
+        <li class="movie1" data-id={{v.id}}>
+            <a href="javascript:void(0);">
+                <img src="{{v.images.medium}}" alt="">
+                <p>{{v.title}}</p>
+            </a>
+        </li>
+        {{/each}}
+</script>
+<!--即将上映-->
+<script type="text/template" id="comingsoon">
+        {{each subjects as v i}}
+        <li class="movie2" data-id={{v.id}}>
+            <a href="javascript:void(0);">
+                <img src="{{v.images.medium}}">
+                <p>{{v.title}}</p>
+            </a>
+        </li>
+        {{/each}}
+</script>
+<!--top250-->
+<script type="text/template" id="top250">
+        {{each subjects as v i}}
+        <li class="movie3" data-id={{v.id}}>
+            <a href="javascript:void(0);">
+                <img src="{{v.images.medium}}" alt="">
+                <p>{{v.title}}</p>
+            </a>
+        </li>
+        {{/each}}
+</script>
+<!--北美票房榜-->
+<script type="text/template" id="usBox">
+        {{each subjects as v i}}
+        <li class="movie4" data-id={{v.subject.id}}>
+            <a href="javascript:void(0);">
+                <img src="{{v.subject.images.medium}}" alt="">
+                <p>{{v.subject.title}}</p>
+            </a>
+        </li>
+        {{/each}}
+</script>
+<script src="resourceJs/jquery-1.7.1.min.js"></script>
+<script src="resourceJs/TouchSlide.1.1.js"></script>
+<script src="resourceJs/slick.js"></script>
+<script src="resourceJs/template.js"></script>
+<script src="js/index.js"></script>
+<script>
+    $(".muiA").on('click',function () {
+       window.history.back(-1)
+    })
+</script>
+</body>
+</html>

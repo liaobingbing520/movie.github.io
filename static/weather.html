@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天气查询</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../resourceCss/mui.min.css">
+    <link rel="stylesheet" href="../resourceCss/base.css">
+    <style>
+        body{
+            background-color: #fff;
+        }
+        /*头部*/
+        header .muiA{
+            width: 20px;
+            height: 20px;
+            display: block;
+            margin-top:10px;
+            text-decoration: none;
+            float: left;
+        }
+        .weather{
+            /*padding: 0 10px;*/
+            height: 100%;
+            width: 100%;
+            margin-top:60px;
+        }
+        input{
+            max-width: 60%;
+            max-height: 30px;
+            margin-left: 5%;
+
+        }
+        #search{
+            display: block;
+            float: right;
+            width: 30%;
+            height: 30px;
+            line-height: 35px;
+            background-color: #ff0c0e;
+            color: #fff;
+            text-align: center;
+            margin-right: 5%;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        table {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 3px 2px 2px 7px #ccc;
+        }
+        td,th{
+            height: 50px;
+            text-align: center;
+            border: 1px solid #CCC;
+            width: 16.66%;
+        }
+        .sp{
+            margin-left: 20px;
+            color: #ff0c0e;
+        }
+    </style>
+</head>
+<body>
+    <header class="mui-bar mui-bar-nav">
+        <a class="muiA"><i class="iconfont">&#xe660;</i></a>
+        <h1 class="mui-title">天气查询</h1>
+    </header>
+<div class="weather">
+    <input type="text" id="city"><a href="javascript:void(0);" id="search">天气查询</a>
+    <span class="sp">广州</span>
+    <table>
+        <thead>
+        <tr>
+            <th>日期</th>
+            <th>白天</th>
+            <th>晚上</th>
+            <th>温度</th>
+            <th>天气</th>
+            <th>风力</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--todo-->
+        </tbody>
+    </table>
+</div>
+ <script type="text/template" id="weatherTep">
+   {{each weather_data as v i}}
+   <tr>
+       <td>{{v.date}}</td>
+       <td><img src="{{v.dayPictureUrl}}" alt=""/></td>
+       <td><img src="{{v.nightPictureUrl}}" alt=""/></td>
+       <td>{{v.temperature}}</td>
+       <td>{{v.weather}}</td>
+       <td>{{v.wind}}</td>
+   </tr>
+     {{/each}}
+ </script>
+<script src="../resourceJs/jquery-1.7.1.min.js"></script>
+<script src="../resourceJs/template.js"></script>
+<script>
+    $(function () {
+        $(".muiA").on("click",function () {
+            window.history.back(-1);
+        })
+
+       $("#search").on("click",function () {
+           var city=$("#city").val();
+           $(".sp").html(city)
+           reder(city)
+       })
+        function reder(city) {
+            $.ajax({
+                url:'http://api.map.baidu.com/telematics/v3/weather',
+                data:{
+                    ak:'0A5bc3c4fb543c8f9bc54b77bc155724',
+                    output:'json',
+                    location:city||'广州'
+                },
+                dataType:'jsonp',
+                beforeSend:function () {
+                    $(".sp").html(city||"广州")
+                },
+                success:function(data){
+                    console.log(data.results[0]);
+                    $('tbody').html(template('weatherTep',data.results[0]));
+                },
+            });
+        }
+        reder()
+    })
+</script>
+</body>
+</html>

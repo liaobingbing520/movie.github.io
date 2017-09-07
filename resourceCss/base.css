@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/*初始化  reset*/
+blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}
+body,button,input,select,textarea{font:14px/1.5 "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;}
+ol,ul{list-style:none}
+a{text-decoration:none}
+fieldset,img{border:0;vertical-align:top;}
+a,input,button,select,textarea{outline:none;}
+a,button{cursor:pointer;}
+a{text-decoration: none}
+p{color: #000000}
+/*浮动清除*/
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0} 
+.clearfloat{zoom:1} 
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.pr{
+    position: relative;
+}
+.pa{
+    position: absolute;
+}
+
+@media screen and (device-width: 320px){
+    html{
+        font-size: 16px;
+    }
+}
+@media screen and (device-width: 360px){
+    html{
+        font-size: 16px;
+    }
+}
+@media screen and (device-width: 375px){
+    html{
+        font-size: 16px;
+    }
+}
+@media screen and (device-width: 414px){
+    html{
+        font-size: 16px;
+    }
+}
+@media screen and (device-width: 412px){
+    html{
+        font-size: 16px;
+    }
+}
+/*字体图标*/
+/*第一步：声明字体*/
+@font-face {
+    /*以前是用来设置字体的，现在不是设置，而是定义一个新的字体*/
+    font-family: 'myfont';/*可以自定义一个新的字体图标*/
+    /*以下四个字体文件，是都需要放到项目目录下的*/
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
+}
+/*第二部：定义调用字体的calss*/
+.iconfont{
+    /*保证font-family属性之后的字体和上面定义的字体名称一致*/
+    font-family:"myfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}

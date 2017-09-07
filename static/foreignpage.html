@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>电影资讯</title>
+    <link rel="stylesheet" href="../resourceCss/mui.min.css">
+    <link rel="stylesheet" href="../resourceCss/base.css">
+    <link rel="stylesheet" href="../css/moviepage.css">
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="muiA"><i class="iconfont">&#xe660;</i></a>
+    <h1 class="mui-title">北美票房榜</h1>
+</header>
+<div class="moviepage">
+    <!--北美票房榜-->
+    <ul class="foreignpage pages">
+
+    </ul>
+</div>
+<!--北美票房榜-->
+<script type="text/html" id="usBox">
+    {{each subjects as v i}}
+    <li class="lists" data-id={{v.subject.id}}>
+        <a href="javascipt:;" class="movie">
+            <img src="{{v.subject.images.medium}}" alt="">
+            <p>{{v.subject.title}}</p>
+        </a>
+    </li>
+    {{/each}}
+</script>
+<script src="../resourceJs/jquery-1.7.1.min.js"></script>
+<script src="../resourceJs/template.js"></script>
+<script src="../js/foreignpage.js"></script>
+<script>
+    $(".muiA").on('click',function () {
+        window.history.back(-1)
+    })
+</script>
+</body>
+</html>

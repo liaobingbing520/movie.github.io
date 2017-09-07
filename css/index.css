@@ -1,0 +1,198 @@
+/*轮播图*/
+.indexFlashTel{
+    margin: 45px 0 20px;
+    position: relative;
+}
+.indexFlashTel img{
+    width: 100%;
+    height: 60%;
+}
+.indexFlashTel .btnDiv{
+    position: absolute;
+    width: 40%;
+    height: 30px;
+    left: 34%;
+    top:85%;
+}
+.indexFlashTel .btnDiv span{
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    float: left;
+    margin: 5px;
+}
+.indexFlashTel .btnDiv span.on{
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    float: left;
+    margin: 5px;
+    background-color: #e62129;
+}
+
+/*导航*/
+#officeImg{
+    position: relative;
+    margin-bottom: 20px;
+
+}
+.slick-prev{
+    width: 20px;
+    height: 40px;
+    float: left;
+    border: none;
+    background:url("../images/jientou2.png") no-repeat;
+    background-size: contain;
+    padding: 0;
+    background-color: #efeff4;
+}
+.slick-next{
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    top:0;
+    border: none;
+    background:url("../images/jiantou1.png") no-repeat;
+    background-size: contain;
+    padding: 0;
+    background-color: #efeff4;
+}
+.name{
+    height: 39px;
+    text-align: center;
+    border: 1px solid #cccccc;
+    line-height: 39px;
+}
+.name a{
+    display: block;
+    float: left;
+    height: 39px;
+    width: 100%;
+    text-decoration: none;
+    color: #000;
+}
+.name a:hover{
+    background-color: #ff0c0e;
+    color: #fff;
+}
+/*头部*/
+header .muiA{
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin-top:10px;
+    text-decoration: none;
+    float: left;
+}
+
+/*正在热映 即将上映 top250 口碑榜 北美票房榜 新片榜*/
+/*.listofnew,*/
+.foreign,
+.top250,
+.comingsoon,
+.hotshowing{
+    width: 100%;
+    height: 100%;
+}
+/*.listofnew .commonson,*/
+.foreign .commonson,
+.top250 .commonson,
+.comingsoon .commonson,
+.hotshowing .commonson{
+    width: 100%;
+    height: 50px;
+    background-color: #ff0c0e;
+    color: #fff;
+}
+/*.listofnew .commonson h4,*/
+.foreign .commonson h4,
+.top250 .commonson h4,
+.comingsoon .commonson h4,
+.hotshowing .commonson h4{
+    float: left;
+    font-size: 1rem;
+    line-height: 50px;
+    margin-left: 10px;
+
+}
+/*.listofnew .commonson a,*/
+.foreign .commonson a,
+.top250 .commonson a,
+.comingsoon .commonson a,
+.hotshowing .commonson a{
+    width: 80px;
+    height: 50px;
+    display: block;
+    float: right;
+    line-height: 50px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+/*.listofnew .fnewlist,*/
+.foreign .foreignlist,
+.top250 .toplist,
+.comingsoon .cominglist,
+.hotshowing .soonlist{
+    width: 100%;
+    height: 100%;
+    margin-bottom:20px;
+}
+.list{
+    width: 100%;
+    height: 180px;
+}
+/*.listofnew .fnewlist li,*/
+.foreign .foreignlist li,
+.top250 .toplist li,
+.comingsoon .cominglist li,
+.hotshowing .soonlist li{
+    width: 30%;
+    height:170px;
+    float: left;
+    margin-left: 2.5%;
+    z-index: 33;
+}
+.hotshowing .soonlist ul,
+.comingsoon .cominglistul ul,
+.top250 .toplist ul,
+.foreign .foreignlist ul{
+    width: 100%;
+    height: 170px;
+}
+/*.listofnew .fnewlist li a,*/
+.foreign .foreignlist li a,
+.top250 .toplist li a,
+.comingsoon .cominglist li a,
+.hotshowing .soonlist li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    float: left;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+/*.listofnew .fnewlist li a img,*/
+.foreign .koubeilist li a img,
+.top250 .toplist li a img,
+.comingsoon .cominglist li a img,
+.hotshowing .soonlist li a img{
+    width: 100%;
+    height: 130px;
+}
+/*.listofnew .fnewlist li a h4,*/
+.foreign .koubeilist li a p,
+.top250 .toplist li a p,
+.comingsoon .cominglist li a p,
+.hotshowing .soonlist li a p{
+   line-height: 27px;
+}

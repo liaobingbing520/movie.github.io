@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>影视详情</title>
+    <link rel="stylesheet" href="../resourceCss/mui.min.css">
+    <link rel="stylesheet" href="../resourceCss/base.css">
+    <link rel="stylesheet" href="../css/filmdetails.css">
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="muiA"><i class="iconfont">&#xe660;</i></a>
+    <h1 class="mui-title">影视详情</h1>
+</header>
+  <div class="filmdetails">
+
+  </div>
+<script type="text/template" id="filmdTem">
+    <div class="details">
+        <div class="details_left">
+            <img src="{{images.medium}}" alt="">
+        </div>
+        <div class="details_right">
+            <h3>{{title}}</h3><i>评分:{{rating.average}}分</i>
+            <p>上映时间:{{year}}</p>
+            <span>导演:</span>
+            {{each directors as v i}}
+              <span>{{v.name}}</span>/
+            {{/each}}<br>
+            <span>演员:</span>
+            {{each casts as v i}}
+              <span>{{v.name}}</span>/
+           {{/each}}<br>
+            <span>类型:</span>
+            {{each genres as v i}}
+             <span>{{v}}</span>/
+            {{/each}}
+        </div>
+    </div>
+    <div class="introduce">
+        <p>{{summary}}</p>
+    </div>
+</script>
+  <script src="../resourceJs/jquery-1.7.1.min.js"></script>
+  <script src="../resourceJs/template.js"></script>
+  <script src="../js/filmdetails.js"></script>
+  <script>
+      $(".muiA").on('click',function () {
+          window.history.back(-1)
+      })
+  </script>
+</body>
+</html>
