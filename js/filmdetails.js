@@ -19,9 +19,9 @@ $(function () {
         dataType:'jsonp',
         url:'https://api.douban.com/v2/movie/subject/'+id,
         success:function (data) {
-
             var htmlStr=template("filmdTem",data);
             $(".filmdetails").html(htmlStr);
         }
     })
-})
+
+});

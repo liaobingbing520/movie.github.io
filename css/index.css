@@ -33,8 +33,36 @@
     margin: 5px;
     background-color: #e62129;
 }
+/*搜索框*/
+.searchs{
+    width: 100%;
+    height: 50px;
+    /*position: static;*/
+}
 
-/*导航*/
+.searchs input{
+    max-width: 70%;
+    max-height: 30px;
+    margin-left: 5%;
+
+}
+.searchs #ss{
+    display: block;
+    float: right;
+    width: 20%;
+    height: 30px;
+    line-height: 35px;
+    background-color: #ff0c0e;
+    color: #fff;
+    text-align: center;
+    margin-right: 5%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.searchs i{
+    font-size: 20px;
+}
+    /*导航*/
 #officeImg{
     position: relative;
     margin-bottom: 20px;
@@ -88,6 +116,15 @@ header .muiA{
     margin-top:10px;
     text-decoration: none;
     float: left;
+}
+header .muiMap{
+    width: 60px;
+    height: 20px;
+    display: block;
+    margin-top:10px;
+    text-decoration: none;
+    float: right;
+    text-align: right;
 }
 
 /*正在热映 即将上映 top250 口碑榜 北美票房榜 新片榜*/

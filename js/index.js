@@ -12,6 +12,7 @@ $(function(){
         autoPage:true,//自动分页
         autoPlay:true //自动播放
     });
+
 })
 //尾部导航
 $(function () {
@@ -123,5 +124,33 @@ $(function () {
         var id=$(this).data("id")
         location.href ="static/filmdetails.html?"+id;
     })
+});
+
+$(function () {
+    // 搜索框
+    $(window).on("scroll",function () {
+        var searchsTop=$(".searchs").offset().top;
+        // 页面滚动的距离
+        var scrollTop=document.body.scrollTop;
+        var windowHei=$(window).height()
+        if(windowHei-searchsTop<scrollTop){
+            $(".searchs").css({'position':'fixed',"top":50})
+        }else {
+            $(".searchs").css({'position':'static'})
+        }
+    });
+     $('#ss').on("click",function () {
+         var inpt=$("#inpt").val();
+         if(inpt.length!= 0) {
+             if(inpt.match(/^[\u4e00-\u9fa5]+$/)){
+                 location.href="static/search.html?"+encodeURIComponent(inpt);//跳转前需要转码
+                 $("#inpt").val("");
+             } else{
+                 alert('请输入中文名');
+
+             }
+
+         }
+     })
 })
 

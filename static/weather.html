@@ -125,7 +125,7 @@
                     $(".sp").html(city||"广州")
                 },
                 success:function(data){
-                    console.log(data.results[0]);
+                    //console.log(data.results[0]);
                     $('tbody').html(template('weatherTep',data.results[0]));
                 },
             });

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>搜索结果</title>
+    <link rel="stylesheet" href="../resourceCss/mui.min.css">
+    <link rel="stylesheet" href="../resourceCss/base.css">
+    <link rel="stylesheet" href="../css/filmdetails.css">
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="muiA"><i class="iconfont">&#xe660;</i></a>
+    <h1 class="mui-title">搜索结果</h1>
+</header>
+<div class="filmdetails">
+
+</div>
+<script type="text/template" id="searchTep">
+    <p class="jieg"></p>
+    {{each subjects as v i}}
+    <div class="details">
+        <div class="details_left">
+            <img src="{{v.images.medium}}" alt="">
+        </div>
+        <div class="details_right">
+            <h3>{{v.title}}</h3><i>评分:{{v.rating.average}}分</i>
+            <p>上映时间:{{v.year}}</p>
+            <span>演员:</span>
+            {{each v.casts as v i}}
+            <span>{{v.name}}</span>、
+            {{/each}}<br>
+            <span>类型:</span>
+            {{each v.genres as v i}}
+            <span>{{v}}</span>、
+            {{/each}}
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script src="../resourceJs/jquery-1.7.1.min.js"></script>
+<script src="../resourceJs/template.js"></script>
+<script src="../js/search.js"></script>
+<script>
+    $(".muiA").on('click',function () {
+        window.history.back(-1)
+    })
+</script>
+</body>
+</html>
