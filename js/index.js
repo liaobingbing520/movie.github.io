@@ -136,7 +136,7 @@ $(function () {
         if(windowHei-searchsTop<scrollTop){
             $(".searchs").css({'position':'fixed',"top":50})
         }else {
-            $(".searchs").css({'position':'static'})
+            $(".searchs").css({'position':'relative','top':0})
         }
     });
      $('#ss').on("click",function () {
