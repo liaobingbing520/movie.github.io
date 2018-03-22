@@ -7,8 +7,10 @@
     <title>我的电影</title>
     <link rel="stylesheet" href="resourceCss/mui.min.css">
     <link rel="stylesheet" href="resourceCss/slick.css">
+    <link rel="stylesheet" href="resourceJs/swiper3/swiper.min.css">
     <link rel="stylesheet" href="resourceCss/base.css">
     <link rel="stylesheet" href="css/index.css">
+
 </head>
 <body>
 <header class="mui-bar mui-bar-nav">
@@ -16,18 +18,20 @@
     <h1 class="mui-title">我的电影</h1>
     <a href="static/map.html" class="muiMap pa">位置<i class="iconfont">&#xe64e;</i></a>
 </header>
-<!--轮播图-->
-<div class="indexFlashTel" id="indexFlashTel">
-    <div class="bd">
-        <ul>
-            <li><img src="images/1.jpg"/></li>
-            <li><img src="images/2.jpg"/></li>
-            <li><img src="images/3.jpg"/></li>
-            <li><img src="images/4.jpg"/></li>
-            <li><img src="images/5.jpg"/></li>
-        </ul>
+<!--swipe3的轮播图-->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+           <!--todo 数据渲染-->
     </div>
-    <div class="btnDiv"></div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+
+    <!-- 如果需要导航按钮 -->
+    <!--<div class="swiper-button-prev"></div>-->
+    <!--<div class="swiper-button-next"></div>-->
+
+    <!-- 如果需要滚动条 -->
+    <!--<div class="swiper-scrollbar"></div>-->
 </div>
 <!--搜索框-->
 <div class="searchs">
@@ -104,6 +108,14 @@
         </ul>
     </div>
 </div>
+<!--轮播-->
+<script type="text/template" id="lunbolist">
+    {{each subjects as v i}}
+        <div class="swiper-slide" data-id="{{v.id}}">
+            <img src="{{v.images.large}}"/>
+        </div>
+    {{/each}}
+</script>
 <!--正在热映-->
 <script type="text/template" id="intheaters">
         {{each subjects as v i}}
@@ -142,7 +154,7 @@
         {{each subjects as v i}}
         <li class="movie4" data-id={{v.subject.id}}>
             <a href="javascript:void(0);">
-                <img src="{{v.subject.images.medium}}" alt="">
+                <img src="{{v.subject.images.medium}}" alt="" style="height: 130px">
                 <p>{{v.subject.title}}</p>
             </a>
         </li>
@@ -152,6 +164,7 @@
 <script src="resourceJs/TouchSlide.1.1.js"></script>
 <script src="resourceJs/slick.js"></script>
 <script src="resourceJs/template.js"></script>
+<script src="resourceJs/swiper3/swiper.min.js"></script>
 <script src="js/index.js"></script>
 <script>
     $(".muiA").on('click',function () {

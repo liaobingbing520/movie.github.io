@@ -1,42 +1,19 @@
-/*轮播图*/
-.indexFlashTel{
-    margin: 45px 0 20px;
-    position: relative;
-}
-.indexFlashTel img{
+
+/*swipe3 轮播图*/
+.swiper-container {
     width: 100%;
-    height: 60%;
+    height: 300px;
+    margin-top: 43px;
 }
-.indexFlashTel .btnDiv{
-    position: absolute;
-    width: 40%;
-    height: 30px;
-    left: 34%;
-    top:85%;
-}
-.indexFlashTel .btnDiv span{
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #fff;
-    float: left;
-    margin: 5px;
-}
-.indexFlashTel .btnDiv span.on{
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #fff;
-    float: left;
-    margin: 5px;
-    background-color: #e62129;
+.swiper-container img{
+    width: 100%;
+    height: 100%;
 }
 /*搜索框*/
 .searchs{
     width: 100%;
     height: 50px;
+    margin-top: 20px;
     /*position: relative;*/
 }
 
@@ -121,7 +98,6 @@ header .muiA{
 header .muiMap{
     width: 60px;
     height: 40px;
-    display: block;
     text-decoration: none;
     text-align: right;
     top:10px;
@@ -223,6 +199,7 @@ header .muiMap{
 .foreign .koubeilist li a img,
 .top250 .toplist li a img,
 .comingsoon .cominglist li a img,
+.foreignlists .movie1 a img,
 .hotshowing .soonlist li a img{
     width: 100%;
     height: 130px;
